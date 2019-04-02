@@ -1,3 +1,5 @@
+// *= require bootstrap-datepicker3
+
 // Graphical variables
 @import "config/fonts";
 @import "config/colors";
@@ -11,3 +13,9 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "components/button";
+@import "pages/show";
+
+
+// Date picker
+// @import "bootstrap-datepicker3";
