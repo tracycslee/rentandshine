@@ -1,0 +1,23 @@
+// _new.scss
+.container {
+  margin: 10px;
+}
+
+.img-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.img-placeholder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  background-color: #e5efff;
+  color: #ee9583;
+  text-align: center;
+  vertical-align: center;
+  border-radius: 25px;
+}
+

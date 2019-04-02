@@ -1,5 +1,9 @@
 class ListingsController < ApplicationController
+
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
+    @listings = Listing.all
   end
 
   def show
@@ -7,12 +11,18 @@ class ListingsController < ApplicationController
   end
 
   def new
+    @listing = Listing.new
+    authorize @listing
   end
 
   def create
+    @listing = Listing.find(params[:id])
+    authorize @listing
+    @listing.user = current_user
   end
 
   def edit
+
   end
 
   def update
@@ -23,7 +33,11 @@ class ListingsController < ApplicationController
 
   private
 
-  def cocktail_params
-    params.require(:cocktail).permit(:name, :image)
+  def set_listing
+    @listing = Listing.find(params[:id])
+  end
+
+  def listing_params
+    params.require(:listing).permit(:price, :image, :detail, :brand, :size)
   end
 end

@@ -1,2 +1,20 @@
-<h1>Listings#new</h1>
-<p>Find me in app/views/listings/new.html.erb</p>
+<h1>Add a New Listing</h1>
+<div class="banner">
+</div>
+<div class="container">
+  <div class="form">
+    <%= simple_form_for(@listing) do |f| %>
+      <p>Image</p>
+      <div class="img-container">
+        <div class="img-placeholder"><i class="fas fa-plus"></i></div>
+        <div class="img-placeholder"><i class="fas fa-plus"></i></div>
+        <div class="img-placeholder"><i class="fas fa-plus"></i></div>
+        <div class="img-placeholder"><i class="fas fa-plus"></i></div>
+      </div>
+      <%= f.input :price, placeholder: '$1000/day' %>
+      <%= f.input :brand, placeholder: 'Chanel'%>
+      <%= f.input :detail, placeholder: 'Chanel Cotton Tweed Coral & White Dress Spring-Summer 2019' %>
+      <%= f.button :submit, class: "button" %>
+    <% end %>
+  </div>
+</div>
