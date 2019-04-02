@@ -1,2 +1,44 @@
-<h1>Listings#index</h1>
-<p>Find me in app/views/listings/index.html.erb</p>
+<!-- navbar -->
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <%= link_to "#", class: "navbar-brand" do %>
+    <%= image_tag "logo.png" %>
+  <% end %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "Sign up", "#", class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Log in", "#", class: "nav-link" %>
+      </li>
+      <li class="nav-item dropdown">
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- banner -->
+<div class="banner">
+</div>
+<!-- card -->
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="card" >
+        <% @listings.each do |listing| %>
+          <%= image_tag("https://res.cloudinary.com/druqv0vyz/image/upload/v1554189086/bsl7gmzfpz9x0k70ip5e.jpg", class: "card-img")%>
+          <div class="card-description">
+            <p id="brand"><%=listing.brand%></p>
+            <p><i><%=listing.detail%></i></p>
+            <p><%=listing.size%></p>
+            <p>$<%=listing.price%>/day</p>
+          </div>
+          <%= link_to "", listing_path(listing), class: 'card-link' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
