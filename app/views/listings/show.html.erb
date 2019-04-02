@@ -1,2 +1,23 @@
-<h1>Listings#show</h1>
-<p>Find me in app/views/listings/show.html.erb</p>
+<div class="show">
+
+  <div class="list-img"><%= cl_image_tag @listing.image, height: 646, width: 464, class: "list-img" %></div>
+
+  <div class="description">
+    <h1><%= @listing.brand %></h1>
+    <p><%= @listing.detail %></p>
+    <div class="size-price">
+      <p>¥ <%= @listing.price %></p>
+      <p><%= @listing.size %></p>
+    </div>
+    <h4>Booking</h4>
+    <div class="container">
+      <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+        <%= simple_form_for :search, method: "get" do |f| %>
+          <%= f.input :starts_at, as: :string, required: false, input_html: { class: "datepicker" } %>
+          <%= f.input :ends_at, as: :string, required: false, input_html: { class: "datepicker" } %>
+          <%= f.button :submit, "Confirmation", class: "button" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

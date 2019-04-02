@@ -19,8 +19,6 @@ class ListingsController < ApplicationController
     @listing = Listing.find(params[:id])
     authorize @listing
     @listing.user = current_user
-
-
   end
 
   def edit
