@@ -18,6 +18,7 @@ gem 'devise'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
+  gem 'carrierwave', '~> 1.2'
 end
 
 group :development, :test do
