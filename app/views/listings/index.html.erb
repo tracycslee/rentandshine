@@ -1,9 +1,9 @@
 <h1>Listings#index</h1>
 <p>Find me in app/views/listings/index.html.erb</p>
-<% @listings.each |listing| %>
-<%= listing.image %>
-<%= listing.size %>
-<%= listing.price %>
-<%= listing.brand %>
-<%= listing.description %>
+<% @listings.each do |listing| %>
+  <%= listing.image %>
+  <%= listing.size %>
+  <%= listing.price %>
+  <%= listing.brand %>
+  <%= listing.description %>
 <% end %>
