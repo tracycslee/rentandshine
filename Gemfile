@@ -9,6 +9,8 @@ gem 'rails', '5.2.2.1'
 gem 'redis'
 
 gem 'autoprefixer-rails'
+gem 'carrierwave', '~> 1.2'
+gem 'cloudinary', '~> 1.9.1'
 gem 'font-awesome-sass', '~> 5.6.1'
 gem 'sassc-rails'
 gem 'simple_form'
@@ -18,7 +20,6 @@ gem 'devise'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
-  gem 'carrierwave', '~> 1.2'
 end
 
 group :development, :test do
