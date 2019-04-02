@@ -6,6 +6,6 @@ class Listing < ApplicationRecord
   validates :price, presence: true
   validates :image, presence: true
   validates :detail, presence: true
-  validates :drand, presence: true
+  validates :brand, presence: true
   validates :size, presence: true
 end
