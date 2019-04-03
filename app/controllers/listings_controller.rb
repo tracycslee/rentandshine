@@ -1,5 +1,4 @@
 class ListingsController < ApplicationController
-
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
@@ -7,8 +6,7 @@ class ListingsController < ApplicationController
   end
 
   def show
-    @listing = Listing.find(params[:id])
-
+    set_listing
   end
 
   def new
@@ -28,13 +26,19 @@ class ListingsController < ApplicationController
   end
 
   def edit
-
+    set_listing
   end
 
   def update
+    set_listing
+    @listing.update(listing_params)
+    redirect_to listings_path
   end
 
   def destroy
+    set_listing
+    @listing.destroy
+    redirect_to listings_path
   end
 
   private
