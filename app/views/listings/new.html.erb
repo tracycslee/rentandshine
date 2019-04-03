@@ -3,7 +3,7 @@
 </div>
 <div class="container">
   <div class="form">
-    <%= simple_form_for(@listing) do |f| %>
+    <%= simple_form_for @listing, html: { multipart: true} do |f| %>
       <p>Image</p>
       <div class="img-container">
         <div class="img-placeholder"><i class="fas fa-plus"></i></div>
@@ -11,7 +11,7 @@
         <div class="img-placeholder"><i class="fas fa-plus"></i></div>
         <div class="img-placeholder"><i class="fas fa-plus"></i></div>
       </div>
-      <%= f.input :image %>
+      <%= f.input :images, as: :file, input_html: { multiple: true }%>
       <%= f.input :price, placeholder: '$1000/day' %>
       <%= f.input :size, placeholder: 'S-6-10-38'%>
       <%= f.input :brand, placeholder: 'Chanel'%>

@@ -8,6 +8,7 @@ class ListingsController < ApplicationController
 
   def show
     @listing = Listing.find(params[:id])
+
   end
 
   def new
@@ -43,6 +44,6 @@ class ListingsController < ApplicationController
   end
 
   def listing_params
-    params.require(:listing).permit(:price, :image, :detail, :brand, :size)
+    params.require(:listing).permit(:price, :detail, :brand, :size, images: [])
   end
 end
