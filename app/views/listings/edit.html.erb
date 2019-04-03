@@ -1,2 +1,17 @@
-<h1>Listings#edit</h1>
-<p>Find me in app/views/listings/edit.html.erb</p>
+<h1> Edit an Item</h1>
+<div class="banner">
+</div>
+<div class="container">
+  <div class="form">
+    <%= simple_form_for @listing, html: { multipart: true} do |f| %>
+      <%#= f.input :images, as: :file, input_html: { multiple: true }%>
+      <%= f.file_field :images, multiple: true %>
+      <%= f.input :price, placeholder: '$1000/day' %>
+      <%= f.input :size, placeholder: 'S-6-10-38'%>
+      <%= f.input :brand, placeholder: 'Chanel'%>
+      <%= f.input :detail, placeholder: 'Chanel Cotton Tweed Coral & White Dress Spring-Summer 2019' %>
+      <%= f.button :submit, class: "button" %>
+    <% end %>
+  </div>
+</div>
+

@@ -1,8 +1,12 @@
 <div class="show">
-  <% @listing.images.each do |image| %>
-    <div class="list-img"><%= cl_image_tag image, height: 646, width: 464, class: "list-img" %></div>
-  <% end %>
-  <!--  <div class="list-img"><%#= cl_image_tag @listing.image, height: 646, width: 464, class: "list-img" %></div> -->
+
+  <div class="list-img">
+    <% @listing.images.each do |image| %>
+      <%= cl_image_tag image, height: 646, width: 464, class: "list-img" %>
+    <% end %>
+  </div>
+  <!-- <div class="list-img"><%= cl_image_tag @listing.images, height: 646, width: 464, class: "list-img" %></div> -->
+
   <div class="description">
     <h1><%= @listing.brand %></h1>
     <p><%= @listing.detail %></p>
