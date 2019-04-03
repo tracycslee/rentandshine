@@ -1,28 +1,48 @@
 <h1>Welcome <%= @user.email%>!</h1>
 <h2>Your Bookings</h2>
-<% @bookings.each do |booking| %>
-  <% booking %>
-<% end %>
-<h2>Your Listings</h2>
+<!-- booking card -->
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-3">
-      <div class="card" >
-        <% @listings.each do |listing| %>
-          <%= image_tag("https://res.cloudinary.com/druqv0vyz/image/upload/v1554189086/bsl7gmzfpz9x0k70ip5e.jpg", class: "card-img")%>
+    <% @bookings.each do |booking| %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="card" >
+          <%= cl_image_tag booking.image, class: "card-img" %>
+          <div class="card-description">
+            <p id="brand"><%=booking.brand%></p>
+            <p><i><%=booking.detail%></i></p>
+            <p><%=booking.size%></p>
+            <p>$<%=booking.price%>/day</p>
+          </div>
+        </div>
+        <%= link_to "", booking_path(booking), class: 'card-link' %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<% @bookings.each do |booking| %>
+  <% booking. %>
+<% end %>
+<h2>Your Listings</h2>
+<!-- listing card -->
+<div class="container">
+  <div class="row">
+    <% @listings.each do |listing| %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="card" >
+          <%= cl_image_tag listing.image, class: "card-img" %>
           <div class="card-description">
             <p id="brand"><%=listing.brand%></p>
             <p><i><%=listing.detail%></i></p>
             <p><%=listing.size%></p>
             <p>$<%=listing.price%>/day</p>
           </div>
-          <%= link_to "", listing_path(listing), class: 'card-link' %>
         </div>
+        <%= link_to "", listing_path(listing), class: 'card-link' %>
       </div>
     <% end %>
   </div>
 </div>
-create_table "bookings", force: :cascade do |t|
+<!-- create_table "bookings", force: :cascade do |t|
 t.integer "total_price"
 t.datetime "start_date"
 t.datetime "end_date"
@@ -43,4 +63,4 @@ t.bigint "user_id"
 t.datetime "created_at", null: false
 t.datetime "updated_at", null: false
 t.index ["user_id"], name: "index_listings_on_user_id"
-end
+end -->
