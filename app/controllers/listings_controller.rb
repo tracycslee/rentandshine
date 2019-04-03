@@ -10,7 +10,6 @@ class ListingsController < ApplicationController
     set_listing
     @booking = Booking.new
     @user = current_user
-
   end
 
   def new

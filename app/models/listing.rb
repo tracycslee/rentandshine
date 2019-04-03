@@ -1,5 +1,6 @@
 class Listing < ApplicationRecord
   mount_uploaders :images, PhotoUploader
+  serialize :images
 
   belongs_to :user
   has_many :bookings

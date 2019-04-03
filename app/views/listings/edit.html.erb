@@ -5,7 +5,7 @@
   <div class="form">
     <%= simple_form_for @listing, html: { multipart: true} do |f| %>
       <%#= f.input :images, as: :file, input_html: { multiple: true }%>
-      <%= f.file_field :images, multiple: true %>
+      <%= f.file_field :images, multiple: true, name: "listing[images][]" %>
       <%= f.input :price, placeholder: '$1000/day' %>
       <%= f.input :size, placeholder: 'S-6-10-38'%>
       <%= f.input :brand, placeholder: 'Chanel'%>

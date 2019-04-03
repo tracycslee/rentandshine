@@ -1,7 +1,11 @@
 // bookings/show.scss
-.list-img .confirm {
-  width: 100px;
-  height: 150px;
+.big-box {
+  display: flex;
+}
+
+.img {
+  margin: 20px;
+  margin-left: 3%;
 }
 
 .container .confirm {
