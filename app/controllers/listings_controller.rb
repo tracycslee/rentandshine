@@ -1,5 +1,6 @@
 class ListingsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :set_listing, only: [:show, :edit, :update, :destroy]
 
   def index
     @listings = Listing.all
@@ -35,20 +36,12 @@ class ListingsController < ApplicationController
 
   def update
     set_listing
+    authorize @listing
     @listing.update(listing_params)
     redirect_to listings_path
   end
 
   def destroy
-    set_listing
-    @listing.destroy
-    redirect_to listings_path
-    authorize @listing
-    @listing.update(listing_params)
-    redirect_to listing_path(@listing)
-  end
-
-  def destroy  #not tested
     set_listing
     authorize @listing
     @listing.destroy
@@ -63,6 +56,6 @@ class ListingsController < ApplicationController
   end
 
   def listing_params
-    params.require(:listing).permit(:price, :detail, :brand, :size, images: [])
+    params.require(:listing).permit(:price, :detail, :brand, :size, {images: []})
   end
 end
