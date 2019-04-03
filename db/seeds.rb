@@ -10,7 +10,7 @@ User.delete_all if Rails.env.development?
 
 user = User.create!(first_name: 'Nini', last_name: 'Chanel', email: 'nini@gmail.com', password: 'ninichanel')
 url = "https://www.chanel.com/us/img/t_resize-look/q_auto,f_jpg,fl_lossy,dpr_2/w_501/prd/sys-master/content/h2e/hae/8823585505310"
-listing = Listing.new(price: '¥1000', detail: 'spring-summer 2019 haute couture', brand: 'Chanel', size: 'S-6-10-38', remote_image_url: url)
+listing = Listing.new(price: '¥1000', detail: 'spring-summer 2019 haute couture', brand: 'CHANEL', size: 'S-6-10-38', remote_image_url: url)
 listing.user = user
 listing.save!
 

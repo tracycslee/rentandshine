@@ -11,16 +11,16 @@ class ListingPolicy < ApplicationPolicy
 
   #only the owner can update
   def update?
-    is_owner_or_admin?
+    is_owner?
   end
 
   def destroy?
-    is_owner_or_admin?
+    is_owner?
   end
 
   private
 
-  def is_owner_or_admin?
-    record.user == user || user.admin
+  def is_owner?
+    record.user == user
   end
 end
