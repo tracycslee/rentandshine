@@ -36,10 +36,12 @@ class ListingsController < ApplicationController
   def update
     set_listing
     authorize @listing
-    @listing.update(listing_params)
-    redirect_to listings_path
+    if @listing.update(listing_params)
+      redirect_to listings_path
+    else
+      redirect_to listings_path
+    end
   end
-
 
   def destroy
     set_listing

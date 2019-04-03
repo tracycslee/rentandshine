@@ -2,19 +2,19 @@
 <hr>
 <div class="big-box">
   <div class="img">
-      <% @listing.images.each do |image| %>
-        <%= cl_image_tag image, height: 646, width: 464, class: "img"  %>
-      <% end %>
-    </div>
+    <% @listing.images.each do |image| %>
+      <%= cl_image_tag image, height: 646, width: 464, class: "img"  %>
+    <% end %>
+  </div>
   <div class="container confirm">
     <table>
       <tr>
         <th class="left">Booking Start Date: </th>
-        <th><%= @booking.start_date %></th>
+        <th><%= @booking.start_date.strftime("%F") %></th>
       </tr>
       <tr>
         <th class="left">Booking End Date: </th>
-        <th><%= @booking.end_date %></th>
+        <th><%= @booking.end_date.strftime("%F") %></th>
       </tr>
       <tr>
         <th class="left">Brand: </th>
@@ -36,3 +36,4 @@
     <div><%= link_to "Go back to index", listings_path, class: "button" %></div>
   </div>
 </div>
+
