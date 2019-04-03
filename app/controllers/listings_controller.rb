@@ -1,5 +1,4 @@
 class ListingsController < ApplicationController
-
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
@@ -7,8 +6,10 @@ class ListingsController < ApplicationController
   end
 
   def show
-    @listing = Listing.find(params[:id])
+
+    set_listing
     @booking = Booking.new
+
   end
 
   def new
@@ -34,6 +35,14 @@ class ListingsController < ApplicationController
 
   def update
     set_listing
+    @listing.update(listing_params)
+    redirect_to listings_path
+  end
+
+  def destroy
+    set_listing
+    @listing.destroy
+    redirect_to listings_path
     authorize @listing
     @listing.update(listing_params)
     redirect_to listing_path(@listing)
@@ -54,6 +63,6 @@ class ListingsController < ApplicationController
   end
 
   def listing_params
-    params.require(:listing).permit(:price, :image, :detail, :brand, :size)
+    params.require(:listing).permit(:price, :detail, :brand, :size, images: [])
   end
 end
