@@ -6,7 +6,10 @@ class ListingsController < ApplicationController
   end
 
   def show
+
     set_listing
+    @booking = Booking.new
+
   end
 
   def new
@@ -27,6 +30,7 @@ class ListingsController < ApplicationController
 
   def edit
     set_listing
+    authorize @listing
   end
 
   def update
@@ -39,6 +43,17 @@ class ListingsController < ApplicationController
     set_listing
     @listing.destroy
     redirect_to listings_path
+    authorize @listing
+    @listing.update(listing_params)
+    redirect_to listing_path(@listing)
+  end
+
+  def destroy  #not tested
+    set_listing
+    authorize @listing
+    @listing.destroy
+    @user = current_user
+    redirect_to users_dashboard_path(@user)
   end
 
   private

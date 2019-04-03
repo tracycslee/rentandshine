@@ -1,0 +1,71 @@
+<h1>Welcome <%= @user.email%>!</h1>
+<h2>Your Bookings</h2>
+<!-- booking card -->
+<div class="container">
+  <div class="row">
+    <% @bookings.each do |booking| %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div>Rent: <%= booking.start_date %> to  <%= booking.end_date %> </div>
+        <div class="card" >
+          <%= cl_image_tag booking.listing.image, class: "card-img" %>
+          <div class="card-description">
+            <p id="brand"><%=booking.listing.brand%></p>
+            <p><i><%=booking.listing.detail%></i></p>
+            <p><%=booking.listing.size%></p>
+            <p>Payed: $<%=booking.total_price%></p>
+          </div>
+        </div>
+        <%= link_to "", listing_path(booking.listing), class: 'card-link' %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<!-- listing card -->
+<h2>Your Listings</h2>
+<%= link_to "Add listing", new_listing_path%>
+<div class="container">
+  <div class="row">
+    <% @listings.each do |listing| %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <%= link_to edit_listing(listing) do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+        <%= link_to '#' do %>
+          <i class="fas fa-trash"></i>
+        <% end %>
+        <div class="card" >
+          <%= cl_image_tag listing.image, class: "card-img" %>
+          <div class="card-description">
+            <p id="brand"><%=listing.brand%></p>
+            <p><i><%=listing.detail%></i></p>
+            <p><%=listing.size%></p>
+            <p>$<%=listing.price%>/day</p>
+          </div>
+        </div>
+        <%= link_to "", listing_path(listing), class: 'card-link' %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<!-- create_table "bookings", force: :cascade do |t|
+t.integer "total_price"
+t.datetime "start_date"
+t.datetime "end_date"
+t.bigint "user_id"
+t.bigint "listing_id"
+t.datetime "created_at", null: false
+t.datetime "updated_at", null: false
+t.index ["listing_id"], name: "index_bookings_on_listing_id"
+t.index ["user_id"], name: "index_bookings_on_user_id"
+end
+create_table "listings", force: :cascade do |t|
+t.integer "price"
+t.string "image"
+t.string "detail"
+t.string "brand"
+t.string "size"
+t.bigint "user_id"
+t.datetime "created_at", null: false
+t.datetime "updated_at", null: false
+t.index ["user_id"], name: "index_listings_on_user_id"
+end -->
