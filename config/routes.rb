@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   resources :listings do
     resources :bookings, only: [:show, :create]
   end
-
+  get '/users/dashboard', to: 'pages#dashboard'
 end

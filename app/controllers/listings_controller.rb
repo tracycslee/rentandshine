@@ -28,13 +28,23 @@ class ListingsController < ApplicationController
   end
 
   def edit
-
+    set_listing
+    authorize @listing
   end
 
   def update
+    set_listing
+    authorize @listing
+    @listing.update(listing_params)
+    redirect_to listing_path(@listing)
   end
 
-  def destroy
+  def destroy  #not tested
+    set_listing
+    authorize @listing
+    @listing.destroy
+    @user = current_user
+    redirect_to users_dashboard_path(@user)
   end
 
   private
