@@ -1,0 +1,29 @@
+// _dashboard.scss
+.container {
+  background-color: white;
+}
+
+.card-dash {
+  display: flex;
+}
+
+table {
+  color: grey;
+  font-size: 20px;
+  width: 80%;
+  margin: 20px;
+}
+
+#dash-img {
+  width: 100px;
+  height: 150px;
+}
+
+.row-title {
+  width: 200px;
+}
+
+.middle-bar {
+  display: flex;
+justify-content: space-between;
+}
