@@ -1,4 +1,4 @@
-<h1>Add a New Listing</h1>
+<h1>Add a New Item</h1>
 <div class="banner">
 </div>
 <div class="container">
@@ -11,10 +11,13 @@
         <div class="img-placeholder"><i class="fas fa-plus"></i></div>
         <div class="img-placeholder"><i class="fas fa-plus"></i></div>
       </div>
+      <%= f.input :image %>
       <%= f.input :price, placeholder: '$1000/day' %>
+      <%= f.input :size, placeholder: 'S-6-10-38'%>
       <%= f.input :brand, placeholder: 'Chanel'%>
       <%= f.input :detail, placeholder: 'Chanel Cotton Tweed Coral & White Dress Spring-Summer 2019' %>
       <%= f.button :submit, class: "button" %>
     <% end %>
   </div>
 </div>
+
