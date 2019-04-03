@@ -1,32 +1,36 @@
 <h1>Booking Confirmation</h1>
 <hr>
-<% @listing.images.each do |image| %>
-  <div class="list-img"><%= cl_image_tag image, height: 646, width: 464, class: "list-img" %></div>
-<% end %>
-<table>
-  <tr>
-    <th>Booking Start Date: </th>
-    <th><%= @booking.start_date %></th>
-  </tr>
-  <tr>
-    <th>Booking End Date: </th>
-    <th><%= @booking.end_date %></th>
-  </tr>
-  <tr>
-    <th>Brand: </th>
-    <th><%= @listing.brand %></th>
-  </tr>
-  <tr>
-    <th>Description: </th>
-    <th><%= @listing.detail %></th>
-  </tr>
-  <tr>
-    <th>Price: </th>
-    <th><%= @listing.price %></th>
-  </tr>
-  <tr>
-    <th>Price: </th>
-    <th><%= @listing.size %></th>
-  </tr>
-</table>
+<div class="container confirm">
+  <table>
+    <tr>
+      <th class="left">Booking Start Date: </th>
+      <th><%= @booking.start_date %></th>
+    </tr>
+    <tr>
+      <th class="left">Booking End Date: </th>
+      <th><%= @booking.end_date %></th>
+    </tr>
+    <tr>
+      <th class="left">Brand: </th>
+      <th><%= @listing.brand %></th>
+    </tr>
+    <tr>
+      <th class="left">Description: </th>
+      <th><%= @listing.detail %></th>
+    </tr>
+    <tr>
+      <th class="left">Price: </th>
+      <th><%= @listing.price %></th>
+    </tr>
+    <tr>
+      <th class="left">Price: </th>
+      <th><%= @listing.size %></th>
+    </tr>
+  </table>
+</div>
+<div>
+  <% @listing.images.each do |image| %>
+    <div class="list-img"><%= cl_image_tag image,  class: "list-img confirm" %></div>
+  <% end %>
+</div>
 <%= link_to "Go back to index", listings_path, class: "button" %>
