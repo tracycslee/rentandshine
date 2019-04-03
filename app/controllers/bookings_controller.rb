@@ -3,11 +3,11 @@ class BookingsController < ApplicationController
     @listing = Listing.find(params[:listing_id])
     @booking = Booking.new(booking_params)
     @booking.listing = @listing
+    @booking.user = current_user
+    @booking.total_price = @listing.price
 
     authorize @booking
 
-    @booking.user = current_user
-    @booking.total_price = @listing.price
 
     if @booking.save
       redirect_to listing_booking_path(@listing, @booking)
