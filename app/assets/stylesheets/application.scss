@@ -10,8 +10,9 @@
 
 // Your CSS partials
 @import "components/index";
-@import "pages/index";
 
 @import "components/button";
-@import "pages/show";
-@import "pages/new";
+@import "listings/show";
+@import "listings/new";
+
+@import "bookings/show";
