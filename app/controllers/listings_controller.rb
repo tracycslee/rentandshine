@@ -8,6 +8,7 @@ class ListingsController < ApplicationController
 
   def show
     @listing = Listing.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
@@ -16,7 +17,7 @@ class ListingsController < ApplicationController
   end
 
   def create
-    @listing = Listing.find(params[:id])
+    @listing = Listing.new(listing_params)
     authorize @listing
     @listing.user = current_user
   end
