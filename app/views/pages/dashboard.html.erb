@@ -27,10 +27,10 @@
   <div class="row">
     <% @listings.each do |listing| %>
       <div class="col-xs-12 col-sm-6 col-md-4">
-        <%= link_to edit_listing(listing) do %>
+        <%= link_to edit_listing_path(listing) do %>
           <i class="fas fa-edit"></i>
         <% end %>
-        <%= link_to '#' do %>
+        <%= link_to listing_path(listing), method: :delete, data: {confirm: "Are you sure?"} do %>
           <i class="fas fa-trash"></i>
         <% end %>
         <div class="card" >
