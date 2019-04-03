@@ -7,6 +7,7 @@ class BookingPolicy < ApplicationPolicy
   end
 
   # only owner can make a booking
+  # meanwhile, listing owner cannot book its own item
   def create?
     record.listing.user != user
   end
