@@ -7,9 +7,9 @@ class ListingsController < ApplicationController
   end
 
   def show
-
     set_listing
     @booking = Booking.new
+    @user = current_user
 
   end
 
@@ -40,6 +40,7 @@ class ListingsController < ApplicationController
     @listing.update(listing_params)
     redirect_to listings_path
   end
+
 
   def destroy
     set_listing
