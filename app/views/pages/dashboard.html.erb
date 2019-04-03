@@ -2,6 +2,7 @@
 <h2>Your Bookings</h2>
 <!-- booking card -->
 <div class="container">
+
   <% @bookings.each do |booking| %>
     <div class= "card-dash">
       <table>
@@ -29,6 +30,7 @@
       <%= cl_image_tag booking.listing.images[0], class: "card-img", id:"dash-img" %>
     </div>
   <% end %>
+
 </div>
 <!-- listing card -->
 <div class="middle-bar">
