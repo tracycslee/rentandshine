@@ -1,0 +1,46 @@
+<h1>Welcome <%= @user.email%>!</h1>
+<h2>Your Bookings</h2>
+<% @bookings.each do |booking| %>
+  <% booking %>
+<% end %>
+<h2>Your Listings</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="card" >
+        <% @listings.each do |listing| %>
+          <%= image_tag("https://res.cloudinary.com/druqv0vyz/image/upload/v1554189086/bsl7gmzfpz9x0k70ip5e.jpg", class: "card-img")%>
+          <div class="card-description">
+            <p id="brand"><%=listing.brand%></p>
+            <p><i><%=listing.detail%></i></p>
+            <p><%=listing.size%></p>
+            <p>$<%=listing.price%>/day</p>
+          </div>
+          <%= link_to "", listing_path(listing), class: 'card-link' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+create_table "bookings", force: :cascade do |t|
+t.integer "total_price"
+t.datetime "start_date"
+t.datetime "end_date"
+t.bigint "user_id"
+t.bigint "listing_id"
+t.datetime "created_at", null: false
+t.datetime "updated_at", null: false
+t.index ["listing_id"], name: "index_bookings_on_listing_id"
+t.index ["user_id"], name: "index_bookings_on_user_id"
+end
+create_table "listings", force: :cascade do |t|
+t.integer "price"
+t.string "image"
+t.string "detail"
+t.string "brand"
+t.string "size"
+t.bigint "user_id"
+t.datetime "created_at", null: false
+t.datetime "updated_at", null: false
+t.index ["user_id"], name: "index_listings_on_user_id"
+end
