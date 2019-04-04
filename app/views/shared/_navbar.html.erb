@@ -1,7 +1,10 @@
 <!-- navbar -->
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon ">
+  <%= link_to listings_path, class: "navbar-brand" do %>
     <%= image_tag "logo.png" %>
+  <% end %>
+  <%= form_tag listings_path, method: :get do %>
+    <%= text_field_tag :query, params[:query], class: "form-control",placeholder: "Search for a dress" %>
   <% end %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -9,7 +12,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li><%= current_user.email %></li>
+        <li id="welcome">Welcome <%= current_user.email.match(/\w*/) %>!</li>
         <li class="nav-item">
           <%= link_to "Add dress", new_listing_path, class: "nav-link" %>
         </li>

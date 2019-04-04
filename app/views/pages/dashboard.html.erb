@@ -1,34 +1,50 @@
-<div class="board">
-  <h1>Welcome <%= @user.email%>!</h1>
-  <h2>Your Bookings</h2>
-  <!-- booking card -->
-  <div class="container">
-    <div class="row">
-      <% @bookings.each do |booking| %>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <div>Rent: <%= booking.start_date %> to  <%= booking.end_date %> </div>
-          <div class="card" >
-            <%= cl_image_tag booking.listing.image, class: "card-img" %>
-            <div class="card-description">
-              <p id="brand"><%=booking.listing.brand%></p>
-              <p><i><%=booking.listing.detail%></i></p>
-              <p><%=booking.listing.size%></p>
-              <p>Payed: $<%=booking.total_price%></p>
-            </div>
-          </div>
-          <%= link_to "", listing_path(booking.listing), class: 'card-link' %>
-        </div>
-      <% end %>
+
+<h1>Welcome <%= @user.email%>!</h1>
+<h2>Your Bookings</h2>
+<!-- booking card -->
+<div class="container">
+
+  <% @bookings.each do |booking| %>
+    <div class= "card-dash">
+      <table>
+        <tr>
+          <th class="row-title">Rental Period:</th>
+          <th><%= booking.start_date.strftime("From %F") %> <%= booking.end_date.strftime("to %F") %></th>
+        </tr>
+        <tr>
+          <th class="row-title">Brand</th>
+          <th><%=booking.listing.brand%></th>
+        </tr>
+        <tr>
+          <th class="row-title">Description:</th>
+          <th><%=booking.listing.detail%></th>
+        </tr>
+        <tr>
+          <th class="row-title">Size:</th>
+          <th><%=booking.listing.size%></th>
+        </tr>
+        <tr>
+          <th class="row-title">Paid:</th>
+          <th>$<%=booking.total_price%></th>
+        </tr>
+      </table>
+      <%= cl_image_tag booking.listing.images[0], class: "card-img", id:"dash-img" %>
     </div>
-  </div>
-  <!-- listing card -->
-  <h2>Your Dresses</h2>
-  <%= link_to "Add dress", new_listing_path, class: 'button' %>
-  <div class="container">
-    <div class="row">
-      <% @listings.each do |listing| %>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-              <%= link_to edit_listing_path(listing) do %>
+  <% end %>
+
+</div>
+<!-- listing card -->
+<div class="middle-bar">
+  <h2>Your Listings</h2>
+  <%= link_to "Add listing", new_listing_path, class: "button"%>
+</div>
+<div class="container">
+  <div class="row">
+    <% @listings.each do |listing| %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <%= link_to edit_listing_path(listing) do %>
+       
+
           <i class="fas fa-edit"></i>
         <% end %>
 

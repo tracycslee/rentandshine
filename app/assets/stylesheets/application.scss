@@ -12,6 +12,7 @@
 @import "components/index";
 
 @import "components/button";
+@import "listings/index";
 @import "listings/show";
 @import "listings/new";
 @import "listings/dashboard";
@@ -19,3 +20,6 @@
 @import "bookings/show";
 
 @import "devise/new";
+
+@import "pages/dashboard"
+
