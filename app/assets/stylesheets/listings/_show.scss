@@ -27,9 +27,30 @@
   margin: 0 auto;
 }
 
+.detail {
+  margin: 0;
+}
+
 .size-price {
   display: flex;
   justify-content: space-between;
+  margin-top: 15px;
 }
 
-
+.tags {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: normal;
+  text-align: center;
+  letter-spacing: 0.75px;
+  /* text-transform: uppercase; */
+  color: #EE9583;
+  /* background: #E6EFFF; */
+  border-radius: 24px;
+  width: 96px;
+  border: #EE9583 solid 1px;
+  margin: 10px 0;
+  padding: 3px 1px;
+  margin-right: 10px;
+}
