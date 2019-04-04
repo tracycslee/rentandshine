@@ -12,5 +12,6 @@ Rails.application.routes.draw do
     resources :bookings, only: [:show, :create]
   end
   get '/users/dashboard', to: 'pages#dashboard'
+  get '/users/profile', to: 'profiles#show'
   get '/tagged', to: "listings#tagged", as: :tagged
 end
