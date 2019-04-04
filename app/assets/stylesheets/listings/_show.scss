@@ -17,6 +17,12 @@
   margin-right: 30px;
 }
 
+.show-edit-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
 #map {
   position: absolute;
   bottom: 0;
@@ -37,6 +43,10 @@
   margin-top: 15px;
 }
 
+.box-form {
+ float: left;
+}
+
 .tags {
   font-style: normal;
   font-weight: 500;
@@ -54,3 +64,4 @@
   padding: 3px 1px;
   margin-right: 10px;
 }
+
