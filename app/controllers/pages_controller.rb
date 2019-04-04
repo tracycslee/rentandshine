@@ -7,5 +7,4 @@ class PagesController < ApplicationController
     @bookings = @user.bookings
     @listings = @user.listings
   end
-
 end
