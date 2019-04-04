@@ -1,5 +1,5 @@
 <!-- banner -->
-<div class="banner">
+<div class="banner"> Rent & Shine
 </div>
 <div class="container">
   <% @tags = ActsAsTaggableOn::Tag.most_used(5) %>
@@ -29,7 +29,8 @@
           </div>
           <%= link_to "", listing_path(listing), class: 'card-link' %>
         </div>
-      <% end %>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
+<% end %>
 </div>
+

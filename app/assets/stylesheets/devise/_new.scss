@@ -1,0 +1,25 @@
+.signup-box {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.dress {
+  width: 500px;
+  height: 400px;
+  margin: 10px;
+}
+
+.big {
+  height: 500px;
+  width: 800px;
+  margin: 0 auto;
+  border: solid .5px #EE9583;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.singup-h3 {
+  margin-left: 8%;
+  color: #EE9583;
+}
