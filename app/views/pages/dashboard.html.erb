@@ -1,3 +1,4 @@
+
 <h1>Welcome <%= @user.email%>!</h1>
 <h2>Your Bookings</h2>
 <!-- booking card -->
@@ -42,23 +43,33 @@
     <% @listings.each do |listing| %>
       <div class="col-xs-12 col-sm-6 col-md-4">
         <%= link_to edit_listing_path(listing) do %>
+       
+
           <i class="fas fa-edit"></i>
         <% end %>
-        <%= link_to listing_path(listing), method: :delete, data: {confirm: "Are you sure?"} do %>
-          <i class="fas fa-trash"></i>
-        <% end %>
-        <div class="card" >
-          <%= cl_image_tag listing.images[0], class: "card-img" %>
-          <div class="card-description">
-            <p id="brand"><%=listing.brand%></p>
-            <p><i><%=listing.detail%></i></p>
-            <p><%=listing.size%></p>
-            <p>$<%=listing.price%>/day</p>
+
+        <!-- <i class="fas fa-trash"></i>  -->
+        <i id="<%= listing.id %>" class="fas fa-trash hover-icon sweet-alert-link"></i>
+        <%= link_to "", listing_path(listing), method: :delete, class: "hidden delete-link-#{listing.id}" %>
+
+        <%#= link_to "Delete", listing_path(listing), method: :delete, id: "delete-link", class: "delete-link hidden" %>
+
+        <%#= link_to listing_path(listing), method: :delete, id: "sweet-alert" do %>
+          <!-- <i class="fas fa-trash"></i> -->
+        <%# end %>
+          <div class="card" >
+            <%= cl_image_tag listing.images[0], class: "card-img" %>
+            <div class="card-description">
+              <p id="brand"><%=listing.brand%></p>
+              <p><i><%=listing.detail%></i></p>
+              <p><%=listing.size%></p>
+              <p>$<%=listing.price%>/day</p>
+            </div>
           </div>
+          <%= link_to "", listing_path(listing), class: 'card-link' %>
         </div>
-        <%= link_to "", listing_path(listing), class: 'card-link' %>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
 <!-- create_table "bookings", force: :cascade do |t|

@@ -63,7 +63,7 @@ class ListingsController < ApplicationController
   end
 
   def destroy
-    set_listing
+
     authorize @listing
     @listing.destroy
     @user = current_user
