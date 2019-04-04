@@ -4,6 +4,12 @@ class ListingsController < ApplicationController
 
   def index
     @listings = Listing.all
+    if params[:query].present?
+      sql_query = " \ brand @@ :query \ OR detail @@ :query \ "
+      @listings = Listing.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @listings = Listing.all
+    end
   end
 
   def show
