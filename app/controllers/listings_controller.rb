@@ -51,6 +51,14 @@ class ListingsController < ApplicationController
     redirect_to users_dashboard_path(@user)
   end
 
+  def tagged
+    if params[:tag].present?
+      @listings = Listing.tagged_with(params[:tag])
+    else
+      @listings = Listing.all
+    end
+  end
+
   private
 
   def set_listing
@@ -58,6 +66,6 @@ class ListingsController < ApplicationController
   end
 
   def listing_params
-    params.require(:listing).permit(:price, :detail, :brand, :size, {images: []})
+    params.require(:listing).permit(:price, :detail, :brand, :size, {images: []}, tag_list: [])
   end
 end

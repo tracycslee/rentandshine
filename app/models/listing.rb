@@ -2,6 +2,8 @@ class Listing < ApplicationRecord
   mount_uploaders :images, PhotoUploader
   serialize :images
 
+  acts_as_taggable_on :tags
+
   belongs_to :user
   has_many :bookings
   has_many :reviews, through: :bookings

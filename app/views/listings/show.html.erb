@@ -1,15 +1,18 @@
 <div class="show">
-
   <div class="list-img">
     <% @listing.images.each do |image| %>
       <%= cl_image_tag image, height: 646, width: 464, class: "list-img" %>
     <% end %>
   </div>
   <!-- <div class="list-img"><%= cl_image_tag @listing.images, height: 646, width: 464, class: "list-img" %></div> -->
-
   <div class="description">
     <h1><%= @listing.brand %></h1>
-    <p><%= @listing.detail %></p>
+    <p class="detail"><%= @listing.detail %></p>
+    <div class="d-flex">
+      <p><% @listing.tag_list.each do |tag| %>
+          <p class="tags"><%= link_to tag, listings_path(anchor: tag) %></p>
+        <% end %></p>
+    </div>
     <div class="size-price">
       <p>¥ <%= @listing.price %></p>
       <p><%= @listing.size %></p>
