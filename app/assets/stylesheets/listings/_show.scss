@@ -1,11 +1,26 @@
-.show {
+.show-container{
   display: flex;
+  margin-top: 100px;
 }
 
 .list-img {
   border-radius: 10px;
-  margin-left: 3%;
+  margin: 0 30px;
   object-fit: cover;
+}
+
+.box-right {
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  margin-right: 30px;
+}
+
+#map {
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 .description {
