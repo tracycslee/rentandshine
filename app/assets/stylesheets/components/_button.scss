@@ -1,11 +1,11 @@
 .button {
   padding: 10px 24px;
   background: #EE9583;
-  box-shadow: 16.0068px 16.0068px 40.017px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 40.017px;
   color: white;
   transition: background 0.3s ease;
-  margin-left: 60%;
+  margin-bottom: 10px;
   &:hover {
     color: #EE9583;
     background-color: white;
