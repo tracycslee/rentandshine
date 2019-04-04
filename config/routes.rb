@@ -13,5 +13,7 @@ Rails.application.routes.draw do
   end
   get '/users/dashboard', to: 'pages#dashboard'
   get '/users/profile', to: 'profiles#show'
+  get '/users/profile/edit', to: 'profiles#edit'
+  patch '/users/profile', to: 'profiles#update'
   get '/tagged', to: "listings#tagged", as: :tagged
 end
