@@ -13,6 +13,8 @@ class Listing < ApplicationRecord
   validates :size, presence: true
 
   # include PgSearch
-  # pg_search_scope :search_by_brand_and_detail, against: [ :brand, :detail ], using: { tsearch: { prefix: true } }
+  # pg_search_scope :search_by_brand_and_detail,
+  #   against: [ :brand, :detail ],
+  #   using: { tsearch: { prefix: true } }
 
 end
