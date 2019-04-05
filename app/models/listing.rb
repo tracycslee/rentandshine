@@ -3,6 +3,7 @@ class Listing < ApplicationRecord
   serialize :images
 
   acts_as_taggable_on :tags
+  validates :tag_list, presence: true
 
   belongs_to :user
   has_many :bookings, dependent: :destroy

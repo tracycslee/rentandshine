@@ -4,7 +4,7 @@ class ListingsController < ApplicationController
 
   def index
     @listings = Listing.all
-
+    @tags = ActsAsTaggableOn::Tag.most_used(5)
     # search bar
 
     if params[:query].present?
@@ -13,7 +13,6 @@ class ListingsController < ApplicationController
     else
       @listings = Listing.all
     end
-
   end
 
   def show
@@ -71,11 +70,7 @@ class ListingsController < ApplicationController
   end
 
   def tagged
-    if params[:tag].present?
-      @listings = Listing.tagged_with(params[:tag])
-    else
-      @listings = Listing.all
-    end
+    @listings = Listing.tagged_with(params[:tag]) if params[:tag].present?
   end
 
   private

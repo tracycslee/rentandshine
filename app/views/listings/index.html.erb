@@ -2,12 +2,14 @@
 <div class="banner"> Rent & Shine
 </div>
 <div class="container">
-  <% @tags = ActsAsTaggableOn::Tag.most_used(5) %>
   <% @tags.each do |tag| %>
     <div class="d-flex">
       <div id="<%= tag.name%>">
-        <h2 class="category"><%= tag.name %>
-          <div class="number">(<%=@listings.tagged_with(tag.name).size %>)</div>
+        <h2 class="category">
+          <% if @listings.tagged_with(tag.name).size > 0 %>
+            <%= tag.name %>
+            <div class="number">(<%=@listings.tagged_with(tag.name).size %>)</div>
+          <% end %>
         </h2>
       </div>
     </div>
@@ -29,8 +31,7 @@
           </div>
           <%= link_to "", listing_path(listing), class: 'card-link' %>
         </div>
-    <% end %>
-  </div>
-<% end %>
+      <% end %>
+    </div>
+  <% end %>
 </div>
-
