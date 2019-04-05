@@ -23,7 +23,8 @@
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
+          <% user = current_user.email.match(/([a-zA-Z])/)%>
+          <p class="avatar"><%= user[1].upcase %></p>
         </li>
       <% else %>
         <li class="nav-item">
