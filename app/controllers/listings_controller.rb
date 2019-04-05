@@ -13,7 +13,6 @@ class ListingsController < ApplicationController
     else
       @listings = Listing.all
     end
-
   end
 
   def show
@@ -28,7 +27,6 @@ class ListingsController < ApplicationController
       lng: @listing.longitude,
       image_url: helpers.asset_url('heel_marker.png')
     }
-
   end
 
   def new
@@ -63,7 +61,6 @@ class ListingsController < ApplicationController
   end
 
   def destroy
-
     authorize @listing
     @listing.destroy
     @user = current_user
@@ -85,7 +82,6 @@ class ListingsController < ApplicationController
   end
 
   def listing_params
-
-    params.require(:listing).permit(:price, :detail, :brand, :size, :address, {images: []}, tag_list: [])
+    params.require(:listing).permit(:price, :detail, :brand, :size, :address, :image, tag_list: [])
   end
 end
