@@ -2,9 +2,7 @@
 <hr>
 <div class="big-box">
   <div class="img">
-    <% @listing.images.each do |image| %>
-      <%= cl_image_tag image, height: 646, width: 464, class: "img"  %>
-    <% end %>
+    <%= cl_image_tag @listing.image, height: 646, width: 464, class: "img"  %>
   </div>
   <div class="container confirm">
     <table>
