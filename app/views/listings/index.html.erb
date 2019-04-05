@@ -1,5 +1,6 @@
 <!-- banner -->
 <div class="banner"> Rent & Shine
+  <p class="tagline"> Dress with Benefits | No Strings Attached</p>
 </div>
 <div class="container">
   <% @tags.each do |tag| %>
@@ -17,7 +18,7 @@
       <% @listings.tagged_with(tag.name).each do |listing| %>
         <div class="col-xs-12 col-sm-6 col-md-4">
           <div class="card" >
-              <%= cl_image_tag listing.image, class: "card-img" %>
+            <%= cl_image_tag listing.image, class: "card-img" %>
             <div class="card-description">
               <p id="brand"><%=listing.brand%></p>
               <p><i><%=listing.detail%></i></p>
