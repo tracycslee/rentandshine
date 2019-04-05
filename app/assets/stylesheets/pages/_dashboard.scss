@@ -1,7 +1,6 @@
 // _dashboard.scss
 .dash {
   margin: 35px;
-  height: 100vh;
 }
 
 .container {
@@ -10,6 +9,10 @@
 
 .card-dash {
   display: flex;
+}
+
+.card-img {
+  margin-top: 23px;
 }
 
 table {
