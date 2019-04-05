@@ -1,7 +1,6 @@
-<h1>Add Dress</h1>
 <div class="banner">
 </div>
-<div class="container">
+<div class="container" id="form-top">
   <div class="form">
     <%= simple_form_for @listing do |f| %>
       <%= f.input :image %>
@@ -9,11 +8,8 @@
       <%= f.input :size, placeholder: 'S-6-10-38'%>
       <%= f.input :brand, placeholder: 'Chanel'%>
       <%= f.input :detail, placeholder: 'Chanel Cotton Tweed Coral & White Dress Spring-Summer 2019' %>
-
       <%= f.input :tag_list, as: :check_boxes, collection: ["Black Tie", "Cocktail", "Party", "Smart casual", "Wedding"], label: "Dress Code" %>
-
       <%= f.input :address, placeholder: '819 West Nanjing Road Shanghai'%>
-
       <%= f.button :submit, class: "button" %>
     <% end %>
   </div>

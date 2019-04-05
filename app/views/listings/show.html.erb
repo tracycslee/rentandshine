@@ -11,7 +11,7 @@
           <h4><%= @listing.detail %></h4>
           <div class="d-flex">
             <p><% @listing.tag_list.each do |tag| %>
-                <p><%= link_to tag, listings_path(anchor: tag),class: "button" %></p>
+                <p><%= link_to tag, listings_path(anchor: tag),class: "tags" %></p>
               <% end %></p>
           </div>
           <div class="size-price">
@@ -25,11 +25,11 @@
               <%= simple_form_for [@listing, @booking] do |f| %>
                 <%= f.input :start_date, as: :string, required: false, input_html: { class: "datepicker" } %>
                 <%= f.input :end_date, as: :string, required: false, input_html: { class: "datepicker" } %>
-            </div>
-                <% if @listing.user != @user %>
-                  <div class="b-left"><%= f.button :submit, "Book", class: "button" %></div>
-                <% end %>
+              </div>
+              <% if @listing.user != @user %>
+                <div class="b-left"><%= f.button :submit, "Book", class: "button" %></div>
               <% end %>
+            <% end %>
           </div>
         </div>
       </div>
