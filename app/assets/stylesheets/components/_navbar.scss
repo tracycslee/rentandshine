@@ -1,10 +1,10 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
-  position: fixed;
   top: 0;
   width: 100%;
   z-index: 10000;
+
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -30,3 +30,19 @@
 .notice {
   margin: 0;
 }
+
+.avatar {
+  width: 40px;
+    height: 40px;
+    margin-bottom: 0;
+    text-align: center;
+    font-weight: 300;
+    font-size: 26px;
+    box-shadow: 1px 1px 4px 1px lightgrey;
+    margin-left: 10px;
+    background-color: #EE9583;
+    color: white;
+    font-family: cursive;
+    padding-top: 4px;
+}
+

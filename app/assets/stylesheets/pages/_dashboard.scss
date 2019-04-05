@@ -1,4 +1,9 @@
 // _dashboard.scss
+.dash {
+  margin: 35px;
+  height: 100vh;
+}
+
 .container {
   background-color: white;
 }
@@ -24,6 +29,6 @@ table {
 }
 
 .middle-bar {
-  display: flex;
+display: flex;
 justify-content: space-between;
 }
