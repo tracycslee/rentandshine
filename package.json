@@ -10,12 +10,6 @@
     "popper.js": "^1.14.7",
     "sweetalert": "^2.1.2",
     "sweetalert2": "^8.8.1",
-<<<<<<< HEAD
-=======
-
-    "mapbox-gl": "^0.53.1"
->>>>>>> 291ae888cee8b51b58fed337a16ab7522766bb61
-
     "mapbox-gl": "^0.53.1"
   },
   "devDependencies": {
